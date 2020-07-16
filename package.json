@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon app"
+    "server": "nodemon app",
+    "dev": "concurrently \"npm run server\" \"npm run start --prefix client\"",
+    "install-client": "npm install --prefix client"
   },
   "keywords": [],
   "author": "vlad lazuthin",
@@ -20,6 +22,7 @@
     "mongoose": "^5.9.24"
   },
   "devDependencies": {
+    "concurrently": "^5.2.0",
     "nodemon": "^2.0.4"
   }
 }
